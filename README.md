@@ -11,8 +11,11 @@ Angus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of
     <fa-node [origin]="[0.5,0.5,0.0]"
              [align]="[0.25,0.25,0.0]"
              [sizeMode]="['absolute','absolute', 'absolute']"
-             [absoluteSize]="[200,200,200]">
-             <fa-element></fa-element>
+             [absoluteSize]="[200,200,200]"
+             [opacity]="0.25">
+             <fa-element [properties]="{backgroundColor:'cyan', textAlign:'center', paddingTop: '40%'}"
+                         [content]="'<h5>Hello World</h5>'">
+             </fa-element>
     </fa-node>
 
     <fa-node [origin]="[0.5,0.5,0.0]"
