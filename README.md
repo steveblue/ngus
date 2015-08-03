@@ -71,3 +71,12 @@ To watch for changes to typescript and compile on every save, run `tsc --watch` 
 * Push changes to remote fork.
 
 * Make a pull request.
+
+
+##What Angus Needs
+
+* Support for WebGL Features
+* Support for Famo.us Physics Engine
+* Integration of Famo.us UI Events
+* Typescript type definitions for Famo.us Mixed Mode
+* Better handling and customization of Famo.us Engine
