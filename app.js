@@ -11,19 +11,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
+var famous_1 = require('./angus/service/famous');
 var node_1 = require('./angus/core/node');
 var dom_element_1 = require('./angus/core/dom-element');
 var mesh_1 = require('./angus/webgl-renderables/mesh');
 var App = (function () {
     function App() {
+        var app = this;
+        var scene = famous_1.$famous.get().scene;
+        this.rotate = {
+            famous: [0, 15, 0],
+            angular: [0, 15, 0]
+        };
+        var spinner = scene.addComponent({
+            onUpdate: function (time) {
+                app.setRotate({
+                    famous: [0, time * 1233, 0],
+                    angular: [0, time * 433, 0]
+                });
+                scene.requestUpdateOnNextTick(spinner);
+            }
+        });
+        scene.requestUpdate(spinner);
     }
+    App.prototype.onInit = function () {
+    };
+    App.prototype.setRotate = function (obj) {
+        this.rotate = obj;
+    };
+    App.prototype.onChange = function (x) {
+        console.log(x);
+    };
     App = __decorate([
         angular2_1.Component({
-            selector: 'fa-app'
+            selector: 'angus-app',
+            lifecycle: [angular2_1.onInit]
         }),
         angular2_1.View({
             directives: [node_1.FaNode, dom_element_1.FaDomElement, mesh_1.FaMesh],
-            template: "\n    <fa-node [origin]=\"[0.5,0.5,0.0]\"\n             [align]=\"[0.5,0.5,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[100,100,100]\">\n             <fa-element [properties]=\"{backgroundColor:'#F78E69', borderRadius:'50px', paddingTop:'20px', textAlign:'center'}\"\n                         [content]=\"'<h5>Angus!</h5>'\">\n             </fa-element>\n    </fa-node>\n\n    <fa-node [origin]=\"[0.5,0.5,0.0]\"\n             [align]=\"[0.25,0.25,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\">\n             <fa-element [properties]=\"{backgroundColor:'#ABE188', textAlign:'center'}\"\n                         [content]=\"'<h5>Hello</h5>'\">\n             </fa-element>\n    </fa-node>\n\n    <fa-node [origin]=\"[0.5,0.5,0.0]\"\n             [align]=\"[0.6,0.6,0.0]\"\n             [scale]=\"[1.0,1.0,1.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[40,40,40]\"\n             [rotate]=\"[0,45,45]\"\n             [opacity]=\"0.75\">\n             <fa-mesh [geometry]=\"'Tetrahedron'\"\n                      [color]=\"'#F7EF99'\"></fa-mesh>\n    </fa-node>\n  "
+            template: "\n    <fa-node [origin]=\"[0.5,0.5,0.5]\"\n             [mountPoint]=\"[0.5,0.5,0.5]\"\n             [align]=\"[0.25,0.5,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\"\n             [rotate]=\"rotate.famous\">\n             <fa-element [properties]=\"{backgroundImage:'url(screenshots/famous.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top left'}\"\n                         [content]=\"'<div>famous</div>'\">\n             </fa-element>\n    </fa-node>\n\n    <fa-node [origin]=\"[0.5,0.5,0.5]\"\n             [mountPoint]=\"[0.5,0.5,0.5]\"\n             [align]=\"[0.75,0.5,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\"\n             [rotate]=\"rotate.angular\">\n             <fa-element [properties]=\"{backgroundImage:'url(screenshots/angular-2.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top left'}\"\n                         [content]=\"'<div>angular</div>'\">\n             </fa-element>\n    </fa-node>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], App);
