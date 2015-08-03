@@ -1,6 +1,6 @@
 # angus
 
-#### Next Generation integration of Famo.us Mixed Mode and Angular 2.
+#### Next Gen integration of Famo.us Mixed Mode and Angular 2.
 
 v0.0.1
 
