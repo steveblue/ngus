@@ -4,6 +4,8 @@
 
 v0.0.1
 
+![alt text](screenshots/hello-angus.png "Famo.us DOMElement and Mesh in a Mixed Mode Scene")
+
 Angus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of templates. This library allows engineers to bind Angular 2 properties to Famo.us Objects for fast, efficient templating.
 
 
