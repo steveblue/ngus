@@ -18,14 +18,21 @@ var node_1 = require('./node');
 var FaDomElement = (function () {
     function FaDomElement(parent) {
         var DOMElement = famous.domRenderables.DOMElement;
-        this.element = new DOMElement(parent.node, {
-            content: 'Hello World!'
-        });
-        this.element.setProperty('background-color', 'teal');
+        this.element = new DOMElement(parent.node);
     }
+    FaDomElement.prototype.onInit = function () {
+        var elem = this;
+        this.content ? this.element.setContent(elem.content) : false;
+        for (var key in this.properties) {
+            if (this.properties.hasOwnProperty(key)) {
+                this.element.setProperty(key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase(), this.properties[key]);
+            }
+        }
+    };
     FaDomElement = __decorate([
         angular2_1.Component({
-            selector: 'fa-element'
+            selector: 'fa-element',
+            properties: ['properties', 'content']
         }),
         angular2_1.View({
             template: ""
