@@ -1,6 +1,6 @@
 var $famous = (function () {
     function $famous() {
-        if (!$famous.isCreating) {
+        if (!$famous.created) {
             throw new Error("$famous is a singleton. Call $famous.get() instead.");
         }
         this.engine = famous.core.FamousEngine;
@@ -9,13 +9,13 @@ var $famous = (function () {
     }
     $famous.get = function () {
         if ($famous.instance == null) {
-            $famous.isCreating = true;
+            $famous.created = true;
             $famous.instance = new $famous();
-            $famous.isCreating = false;
+            $famous.created = false;
         }
         return $famous.instance;
     };
-    $famous.isCreating = false;
+    $famous.created = false;
     return $famous;
 })();
 exports.$famous = $famous;

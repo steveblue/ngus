@@ -23,9 +23,11 @@ export class $famous
     static get() {
 
         if ($famous.instance == null) {
+            $famous.created = true;
             $famous.instance = new $famous();
-            this.created = true;
+            $famous.created = false;
         }
+
         return $famous.instance;
 
     }
