@@ -23,7 +23,7 @@ Angus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of
              [sizeMode]="['absolute','absolute', 'absolute']"
              [absoluteSize]="[120,120,120]"
              [opacity]="0.75">
-             <fa-mesh [geometry]="'Sphere'"></fa-mesh>
+             <fa-mesh [geometry]="'Tetrahedron'"></fa-mesh>
     </fa-node>
 
 

@@ -33,7 +33,7 @@ var FaNode = (function () {
     };
     FaNode.prototype.setRotation = function () {
         var n = this;
-        this.node.setRotation(n.rotation[0], n.rotation[1], n.rotation[2], n.rotation[3]);
+        this.node.setRotation(n.rotate[0], n.rotate[1], n.rotate[2], n.rotate[3]);
     };
     FaNode.prototype.setScale = function () {
         var n = this;
@@ -79,7 +79,7 @@ var FaNode = (function () {
                 'origin',
                 'align',
                 'position',
-                'rotation',
+                'rotate',
                 'scale',
                 'sizemode',
                 'absolutesize',
