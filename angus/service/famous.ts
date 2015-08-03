@@ -4,13 +4,13 @@ export class $famous
 {
 
     static instance: $famous;
-    static isCreating: Boolean = false;
+    static created: Boolean = false;
     engine: Object;
     scene: Object;
 
     constructor() {
 
-        if (!$famous.isCreating) {
+        if (!$famous.created) {
             throw new Error("$famous is a singleton. Call $famous.get() instead.");
         }
 
@@ -23,11 +23,9 @@ export class $famous
     static get() {
 
         if ($famous.instance == null) {
-            $famous.isCreating = true;
             $famous.instance = new $famous();
-            $famous.isCreating = false;
+            this.created = true;
         }
-
         return $famous.instance;
 
     }
