@@ -20,12 +20,14 @@ var FaMesh = (function () {
         this.mesh = new Mesh(parent.node);
     }
     FaMesh.prototype.onInit = function () {
+        var Color = famous.utilities.Color;
         this.geometry ? this.mesh.setGeometry(this.geometry) : this.mesh.setGeometry('Plane');
+        this.color ? this.mesh.setBaseColor(new Color(this.color)) : this.mesh.setBaseColor(new Color('#ABABAB'));
     };
     FaMesh = __decorate([
         angular2_1.Component({
             selector: 'fa-mesh',
-            properties: ['geometry'],
+            properties: ['geometry', 'color'],
             lifecycle: [angular2_1.onInit]
         }),
         angular2_1.View({
