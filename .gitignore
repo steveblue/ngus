@@ -9,3 +9,4 @@ coverage
 build/Release
 node_modules
 prepros.cfg
+favicon.ico
