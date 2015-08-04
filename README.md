@@ -85,8 +85,8 @@ To watch for changes to typescript and compile on every save, run `tsc --watch` 
 * Support for GL Features
 * Support for Famo.us Physics Engine
 * Integration of Famo.us UI Events
-* Typescript type definitions for Famo.us Mixed Mode
+* Typescript type definitions for Famo.us Engine
 * Better handling and customization of Famo.us Engine
-* Build and deployment pipeline via gulp or browserify
+* Build and deployment pipeline via Gulp or Browserify
 * Integrated tests
 * Documentation
