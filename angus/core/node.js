@@ -63,6 +63,7 @@ var FaNode = (function () {
         this.position ? this.setPosition() : false;
         this.rotate ? this.setRotation() : false;
         this.opacity ? this.setOpacity() : false;
+        this.component = this.node.addComponent(this.config);
     };
     FaNode.prototype.onChange = function (change) {
         change.sizemode ? this.setSizeMode() : false;
@@ -80,7 +81,8 @@ var FaNode = (function () {
     FaNode = __decorate([
         angular2_1.Component({
             selector: 'fa-node',
-            properties: ['mountpoint',
+            properties: ['config',
+                'mountpoint',
                 'origin',
                 'align',
                 'position',

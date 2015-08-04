@@ -20,19 +20,36 @@ var App = (function () {
         var app = this;
         var scene = famous_1.$famous.get().scene;
         this.rotate = {
-            famous: [0, 15, 0],
-            angular: [0, 15, 0]
+            famous: [0, 0, 0],
+            angular: [0, 0, 0]
         };
-        var spinner = scene.addComponent({
+        this.famousComponent = {
+            id: null,
+            node: null,
+            onMount: function (node) {
+                console.log(node);
+                this.id = node.addComponent(this);
+                node.requestUpdate(this.id);
+                this.node = node;
+            },
             onUpdate: function (time) {
-                app.setRotate({
-                    famous: [0, time * 1233, 0],
-                    angular: [0, time * 433, 0]
-                });
-                scene.requestUpdateOnNextTick(spinner);
+                this.node.setRotation(0, time / 832, 0);
+                this.node.requestUpdateOnNextTick(this.id);
             }
-        });
-        scene.requestUpdate(spinner);
+        };
+        this.angularComponent = {
+            id: null,
+            node: null,
+            onMount: function (node) {
+                this.id = node.addComponent(this);
+                node.requestUpdate(this.id);
+                this.node = node;
+            },
+            onUpdate: function (time) {
+                this.node.setRotation(0, time / 1139, 0);
+                this.node.requestUpdateOnNextTick(this.id);
+            }
+        };
     }
     App.prototype.onInit = function () {
     };
@@ -49,7 +66,7 @@ var App = (function () {
         }),
         angular2_1.View({
             directives: [node_1.FaNode, dom_element_1.FaDomElement, mesh_1.FaMesh],
-            template: "\n    <fa-node [origin]=\"[0.5,0.5,0.5]\"\n             [mountPoint]=\"[0.5,0.5,0.5]\"\n             [align]=\"[0.25,0.5,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\"\n             [rotate]=\"rotate.famous\">\n             <fa-element [properties]=\"{backgroundImage:'url(screenshots/famous.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top left'}\"\n                         [content]=\"'<div>famous</div>'\">\n             </fa-element>\n    </fa-node>\n\n    <fa-node [origin]=\"[0.5,0.5,0.5]\"\n             [mountPoint]=\"[0.5,0.5,0.5]\"\n             [align]=\"[0.75,0.5,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\"\n             [rotate]=\"rotate.angular\">\n             <fa-element [properties]=\"{backgroundImage:'url(screenshots/angular-2.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top left'}\"\n                         [content]=\"'<div>angular</div>'\">\n             </fa-element>\n    </fa-node>\n  "
+            template: "\n    <fa-node [origin]=\"[0.5,0.5,0.5]\"\n             [mountPoint]=\"[0.5,0.5,0.5]\"\n             [align]=\"[0.25,0.5,0.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\"\n             [scale]=\"[2.0,2.0,2.0]\"\n             [rotate]=\"rotate.famous\"\n             [config]=\"famousComponent\">\n             <fa-element [properties]=\"{backgroundImage:'url(screenshots/famous.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top left'}\"\n                         [content]=\"''\">\n             </fa-element>\n    </fa-node>\n\n    <fa-node [origin]=\"[0.5,0.5,0.5]\"\n             [mountPoint]=\"[0.5,0.5,0.5]\"\n             [align]=\"[0.75,0.5,0.0]\"\n             [scale]=\"[2.0,2.0,2.0]\"\n             [sizeMode]=\"['absolute','absolute', 'absolute']\"\n             [absoluteSize]=\"[200,200,200]\"\n             [rotate]=\"rotate.angular\"\n             [config]=\"angularComponent\">\n             <fa-element [properties]=\"{backgroundImage:'url(screenshots/angular-2.png)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundPosition: 'top left'}\"\n                         [content]=\"''\">\n             </fa-element>\n    </fa-node>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], App);
