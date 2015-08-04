@@ -50,18 +50,9 @@ var App = (function () {
             }
         };
     }
-    App.prototype.onInit = function () {
-    };
-    App.prototype.setRotate = function (obj) {
-        this.rotate = obj;
-    };
-    App.prototype.onChange = function (x) {
-        console.log(x);
-    };
     App = __decorate([
         angular2_1.Component({
-            selector: 'ngus-app',
-            lifecycle: [angular2_1.onInit]
+            selector: 'ngus-app'
         }),
         angular2_1.View({
             directives: [node_1.FaNode, dom_element_1.FaDomElement, mesh_1.FaMesh],
