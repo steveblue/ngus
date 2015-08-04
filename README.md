@@ -1,4 +1,4 @@
-# angus
+# ngus
 
 #### Next Gen integration of Famo.us Mixed Mode and Angular 2.
 
@@ -31,21 +31,21 @@ Angus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of
 
 ```
 
-* NOTE: Angus is still very early in development and is not ready for a Production environment.
+* NOTE: ngus is still very early in development and is not ready for a Production environment.
 
 
-###Angus Needs Your Help!
+###ngus Needs Your Help!
 
-Angus needs the help of the Famo.us and Angular 2 Developer Communities to really take off and be an invaluable next-gen tool for Web Developers.
+ngus needs the help of the Famo.us and Angular 2 Developer Communities to really take off and be an invaluable next-gen tool for Web Developers.
 
-Angus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine, please contact steveblue at gmail dot com.
+ngus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine, please contact steveblue at gmail dot com.
 
 
 ###Getting Started
 
 Fork the repo and then clone it.
 
-Angular 2 Components can either be written in ES5, ES6 or Typescript syntax. It seems like the Angular 2 Community has put full steam support behind Typescript since ng-conf so I have chosen to use it in development of Angus. Currently, LiveServer is used for development.
+Angular 2 Components can either be written in ES5, ES6 or Typescript syntax. It seems like the Angular 2 Community has put full steam support behind Typescript since ng-conf so I have chosen to use it in development of ngus. Currently, LiveServer is used for development.
 
 ```
 npm install -g typescript
@@ -62,7 +62,7 @@ In the project directory, run `npm install`.
 In the project directory, use the `live-server` command.
 
 
-###Develop Angus
+###Develop ngus
 
 To watch for changes to typescript and compile on every save, run `tsc --watch` in the project directory.
 
@@ -73,10 +73,11 @@ To watch for changes to typescript and compile on every save, run `tsc --watch` 
 * Make a pull request.
 
 
-##What Angus Needs
+##What ngus Needs
 
 * Support for WebGL Features
 * Support for Famo.us Physics Engine
 * Integration of Famo.us UI Events
 * Typescript type definitions for Famo.us Mixed Mode
 * Better handling and customization of Famo.us Engine
+* Build and deployment pipeline via gulp or browserify
