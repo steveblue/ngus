@@ -14,10 +14,10 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./angus/core/dom-element.ts",
-        "./angus/core/node.ts",
-        "./angus/service/famous.ts",
-        "./angus/webgl-renderables/mesh.ts",
+        "./ngus/core/dom-element.ts",
+        "./ngus/core/node.ts",
+        "./ngus/service/famous.ts",
+        "./ngus/webgl-renderables/mesh.ts",
         "./app.ts",
         "./typings/angular2/angular2.d.ts",
         "./typings/es6-promise/es6-promise.d.ts",

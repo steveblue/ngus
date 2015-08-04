@@ -11,10 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require('angular2/angular2');
-var famous_1 = require('./angus/service/famous');
-var node_1 = require('./angus/core/node');
-var dom_element_1 = require('./angus/core/dom-element');
-var mesh_1 = require('./angus/webgl-renderables/mesh');
+var famous_1 = require('./ngus/service/famous');
+var node_1 = require('./ngus/core/node');
+var dom_element_1 = require('./ngus/core/dom-element');
+var mesh_1 = require('./ngus/webgl-renderables/mesh');
 var App = (function () {
     function App() {
         var app = this;
@@ -61,7 +61,7 @@ var App = (function () {
     };
     App = __decorate([
         angular2_1.Component({
-            selector: 'angus-app',
+            selector: 'ngus-app',
             lifecycle: [angular2_1.onInit]
         }),
         angular2_1.View({

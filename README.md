@@ -6,7 +6,7 @@ v0.0.1
 
 ![alt text](screenshots/ngus.gif "Famo.us DOMElement and Mesh in a Mixed Mode Scene")
 
-Angus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of templates. This library allows engineers to bind Angular 2 properties to Famo.us Objects for fast, efficient templating.
+ngus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of templates. This library allows engineers to bind Angular 2 properties to Famo.us Objects for fast, efficient templating.
 
 
 ```
@@ -38,7 +38,7 @@ Angus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of
 
 ngus needs the help of the Famo.us and Angular 2 Developer Communities to really take off and be an invaluable next-gen tool for Web Developers.
 
-ngus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine, please contact steveblue at gmail dot com.
+ngus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine, please contact steveblue at gmail.com
 
 
 ###Getting Started
@@ -75,9 +75,11 @@ To watch for changes to typescript and compile on every save, run `tsc --watch` 
 
 ##What ngus Needs
 
-* Support for WebGL Features
+* Support for GL Features
 * Support for Famo.us Physics Engine
-* Integration of Famo.us UI Events
+* Angularization of Famo.us UI Events
 * Typescript type definitions for Famo.us Mixed Mode
 * Better handling and customization of Famo.us Engine
 * Build and deployment pipeline via gulp or browserify
+* Integrated tests
+* Documentation
