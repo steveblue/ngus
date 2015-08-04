@@ -35,7 +35,7 @@ ngus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of 
 
 ##Demo
 
-A demo of ngus is running at [ngus.io](ngus.io). This is the same example found in the development repository. 
+A demo of ngus is running at [ngus.io](ngus.io). This is the same example found in the development repository.
 
 ##Mission
 
@@ -45,7 +45,7 @@ The goal is to provide a library that can be imported into Angular 2 projects so
 
 ngus needs the help of the Famo.us and Angular 2 Developer Communities to really take off and be an invaluable next-gen tool for Web Developers.
 
-ngus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine contact [admin@ngus.io](admin@ngus.io).
+ngus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine contact <admin@ngus.io>.
 
 
 ###Getting Started
