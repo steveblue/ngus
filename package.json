@@ -7,13 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Steve Belovarich",
-  "license": "GNU",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^1.5.0-beta",
     "live-server": "^0.8.1"
   },
   "dependencies": {
-    "famous": "git+https://github.com/Famous/engine.git#develop"
+    "famous": "git+https://github.com/Famous/engine.git#develop",
+    "systemjs": "^0.18.6",
+    "traceur": "0.0.91"
   },
   "repository": {
     "type": "git",
