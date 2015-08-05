@@ -13,6 +13,28 @@
     "live-server": "^0.8.1"
   },
   "dependencies": {
-      "famous": "git+https://github.com/Famous/engine.git#develop"
-  }
+    "famous": "git+https://github.com/Famous/engine.git#develop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/steveblue/ngus.git"
+  },
+  "keywords": [
+    "angular",
+    "2",
+    "famo.us",
+    "famous",
+    "engine",
+    "engine",
+    "ng",
+    "angular",
+    "javascript",
+    "js",
+    "es6",
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/steveblue/ngus/issues"
+  },
+  "homepage": "https://github.com/steveblue/ngus"
 }

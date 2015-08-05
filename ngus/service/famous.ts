@@ -7,8 +7,11 @@ export class $famous
     static created: Boolean = false;
     engine: Object;
     scene: Object;
+    camera: Object;
 
     constructor() {
+
+        let Camera = famous.components.Camera;
 
         if (!$famous.created) {
             throw new Error("$famous is a singleton. Call $famous.get() instead.");
@@ -16,6 +19,7 @@ export class $famous
 
         this.engine = famous.core.FamousEngine;
         this.scene = this.engine.createScene();
+        this.camera = new Camera(this.scene).setDepth(1000);
         this.engine.init();
 
     }

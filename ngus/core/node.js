@@ -62,8 +62,8 @@ var FaNode = (function () {
         this.align ? this.setAlign() : false;
         this.position ? this.setPosition() : false;
         this.rotate ? this.setRotation() : false;
-        this.opacity ? this.setOpacity() : false;
-        this._component = this.node.addComponent(this.component);
+        this.opacity ? this.setOpacity() : this.opacity = 1.0;
+        this.component ? this._component = this.node.addComponent(this.component) : false;
     };
     FaNode.prototype.onChange = function (change) {
         change.sizemode ? this.setSizeMode() : false;

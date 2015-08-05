@@ -21,13 +21,18 @@ var FaMesh = (function () {
     }
     FaMesh.prototype.onInit = function () {
         var Color = famous.utilities.Color;
-        this.geometry ? this.mesh.setGeometry(this.geometry) : this.mesh.setGeometry('Plane');
-        this.color ? this.mesh.setBaseColor(new Color(this.color)) : this.mesh.setBaseColor(new Color('#ABABAB'));
+        if (this.detail && this.geometry) {
+            this.mesh.setGeometry(this.geometry, { detail: this.detail });
+        }
+        else if (this.geometry) {
+            this.mesh.setGeometry(this.geometry);
+        }
+        this.color ? this.mesh.setBaseColor(new Color(this.color)) : this.mesh.setBaseColor(new Color('#FAFAFA'));
     };
     FaMesh = __decorate([
         angular2_1.Component({
             selector: 'fa-mesh',
-            properties: ['geometry', 'color'],
+            properties: ['geometry', 'color', 'detail'],
             lifecycle: [angular2_1.onInit]
         }),
         angular2_1.View({
