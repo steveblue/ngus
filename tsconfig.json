@@ -1,29 +1,30 @@
 {
-    "version": "1.5.0",
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": true,
-        "noLib": false,
-        "emitDecoratorMetadata": true
-    },
-    "filesGlob": [
-        "./**/*.ts",
-        "!./node_modules/**/*.ts"
-    ],
-    "files": [
-        "./ngus/core/dom-element.ts",
-        "./ngus/core/node.ts",
-        "./ngus/service/famous.ts",
-        "./ngus/webgl-renderables/mesh.ts",
-        "./app.ts",
-        "./typings/angular2/angular2.d.ts",
-        "./typings/es6-promise/es6-promise.d.ts",
-        "./typings/famous/famous.d.ts",
-        "./typings/rx/rx-lite.d.ts",
-        "./typings/rx/rx.d.ts",
-        "./typings/tsd.d.ts"
-    ]
+  "version": "1.5.0",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "noLib": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "filesGlob": [
+    "./**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "files": [
+    "./ngus/core/dom-element.ts",
+    "./ngus/core/node.ts",
+    "./ngus/service/famous.ts",
+    "./ngus/webgl-renderables/mesh.ts",
+    "./app.ts",
+    "./typings/angular2/angular2.d.ts",
+    "./typings/es6-promise/es6-promise.d.ts",
+    "./typings/famous/famous.d.ts",
+    "./typings/rx/rx-lite.d.ts",
+    "./typings/rx/rx.d.ts",
+    "./typings/tsd.d.ts"
+  ]
 }
