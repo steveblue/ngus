@@ -71,7 +71,7 @@ In the project directory, use the `live-server` command.
 
 ###Develop ngus
 
-To watch for changes to typescript and compile on every save, run `tsc --watch` in the project directory.
+To watch for changes to typescript and compile on every save, run `tsc --watch` in the project directory. NOTE: You may get lots of errors when running this command since there are currently no type definitions for Famo.us Engine, see below. The watch should still work even with these errors.
 
 * Commit changes to a branch, i.e. `feature/gl-textures` or `bug/broken-textures`.
 
