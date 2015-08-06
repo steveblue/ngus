@@ -28,8 +28,6 @@ define(["require", "exports", 'angular2/angular2', '../core/node'], function (re
             }
             this.color ? this.mesh.setBaseColor(new Color(this.color)) : this.mesh.setBaseColor(new Color('#FAFAFA'));
         };
-        FaMesh.prototype.onChange = function () {
-        };
         FaMesh = __decorate([
             angular2_1.Component({
                 selector: 'fa-mesh',

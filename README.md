@@ -35,7 +35,7 @@ ngus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of 
 
 ##Demo
 
-A demo of ngus is running at [ngus.io](ngus.io). This is the same example found in the development repository.
+A demo of ngus is running at [ngus.io](http://ngus.io). This is the same example found in the development repository.
 
 ##Mission
 
@@ -52,7 +52,7 @@ ngus still has a long way to go before it is ready for a Production environment.
 
 Fork the repo and then clone it.
 
-Angular 2 Components can either be written in ES5, ES6 or Typescript syntax. It seems like the Angular 2 Community has put full steam support behind Typescript since ng-conf so I have chosen to use it in development of ngus. Currently, LiveServer is used for development.
+Angular 2 Components can either be written in ES5, ES6 or Typescript syntax. It seems like the Angular 2 Community has put full support behind Typescript since ng-conf so I have chosen to use it in development of ngus. Currently, LiveServer is used for a development server.
 
 ```
 npm install -g typescript
