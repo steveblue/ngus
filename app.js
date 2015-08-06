@@ -28,7 +28,7 @@ define(["require", "exports", 'angular2/angular2', './ngus/core/node', './ngus/c
                     this.node = node;
                 },
                 onUpdate: function (time) {
-                    app.rotate.famous = [0, time / 832, 0];
+                    this.node.setRotation(0, time / 832, 0);
                     this.node.requestUpdateOnNextTick(this.id);
                 }
             };
@@ -54,7 +54,7 @@ define(["require", "exports", 'angular2/angular2', './ngus/core/node', './ngus/c
                     this.node = node;
                 },
                 onUpdate: function (time) {
-                    app.rotate.angular = [0, time / 1178, 0];
+                    this.node.setRotation(0, time / 1139, 0);
                     this.node.requestUpdateOnNextTick(this.id);
                 }
             };
