@@ -11,5 +11,7 @@ node_modules
 bower_components
 prepros.cfg
 favicon.ico
+app.js
 ngus/*.js
 ngus/**/*.js
+.DS_Store
