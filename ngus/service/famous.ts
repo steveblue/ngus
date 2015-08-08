@@ -5,9 +5,9 @@ export class $famous
 
     static instance: $famous;
     static created: Boolean = false;
-    engine: Object;
-    scene: Object;
-    camera: Object;
+    engine: any;
+    scene: any;
+    camera: any;
 
     constructor() {
 
