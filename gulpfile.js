@@ -1,0 +1,76 @@
+var gulp    = require('gulp'),
+    plumber = require('gulp-plumber'),
+    concat = require('gulp-concat'),
+    tsc = require('gulp-typescript'),
+    sourcemaps = require('gulp-sourcemaps'),
+    runSequence = require('run-sequence'),
+    uglify = require('gulp-uglify'),
+    watch = require('gulp-watch'),
+    merge = require('merge2'),
+    config   = require('./config.js'),
+
+// Paths
+    root        = config.rootDir,
+    lib         = config.lib;
+
+    // Copy lib for dev
+
+var tsProject = tsc.createProject('tsconfig.json', {
+  typescript: require('typescript')
+});
+
+var tsReleaseProject = tsc.createProject(config.ts.prod,{
+  typescript: require('typescript')
+});
+
+gulp.task('build:dev', function () {
+  var result = gulp.src(config.lib.src)
+    .pipe(plumber())
+    .pipe(tsc(tsProject));
+    return result.js
+      .pipe(gulp.dest(config.buildDir));
+});
+
+gulp.task('build:def', function () {
+  var result = gulp.src(config.lib.src)
+    .pipe(tsc(tsReleaseProject));
+
+    return merge([
+        result.dts
+          .pipe(plumber())
+          .pipe(concat(config.def))
+          .pipe(gulp.dest(config.buildDir))
+    ]);
+});
+
+
+gulp.task('build:prod', function () {
+  var result = gulp.src(config.lib.src)
+    .pipe(tsc(tsProject));
+
+    return result.js
+      .pipe(plumber())
+      //.pipe(concat(config.file))
+      .pipe(gulp.dest(config.buildDir));
+});
+
+gulp.task('dev', function(){
+    gulp.watch(config.lib.src, ['build:prod']);
+})
+
+//TODO: Someone please compile TS to ES6 then compile down to module patters
+// with traceur so packages can be minified.
+
+// gulp.task('build:prod:min', function () {
+//   var result = gulp.src(config.lib.src)
+//     .pipe(plumber())
+//     .pipe(sourcemaps.init())
+//     .pipe(tsc(tsProject));
+//
+//     return result.js
+//       .pipe(plumber())
+//       .pipe(concat(config.min))
+//       .pipe(uglify())
+//       .pipe(sourcemaps.write())
+//       .pipe(gulp.dest(config.buildDir));
+// });

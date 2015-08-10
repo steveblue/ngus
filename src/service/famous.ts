@@ -1,7 +1,6 @@
 declare var famous: any;
-
-export class $famous
-{
+// $famous
+export class $famous {
 
     static instance: $famous;
     static created: Boolean = false;

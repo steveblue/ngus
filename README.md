@@ -31,11 +31,11 @@ ngus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of 
 
 ```
 
-* NOTE: ngus is still very early in development and is not ready for a Production environment.
+* NOTE: ngus and Angular 2 are very early in development and not ready for deployment to a Production environment.
 
 ##Demo
 
-A demo of ngus is running at [ngus.io](http://ngus.io). This is the same example found in the development repository.
+A demo of ngus is running at [ngus.io](http://ngus.io).
 
 ##Mission
 
@@ -56,7 +56,6 @@ Angular 2 Components can either be written in ES5, ES6 or Typescript syntax. It 
 
 ```
 npm install -g typescript
-npm install -g live-server
 
 ```
 

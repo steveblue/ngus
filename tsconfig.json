@@ -2,24 +2,26 @@
     "version": "1.5.0",
     "compilerOptions": {
         "target": "es5",
-        "module": "amd",
+        "module": "system",
         "declaration": false,
         "noImplicitAny": false,
         "removeComments": true,
         "noLib": false,
         "emitDecoratorMetadata": true,
-        "experimentalDecorators": true
+        "experimentalDecorators": true,
+        "outDir": "./dist"
     },
     "filesGlob": [
         "./**/*.ts",
+        "./**/**/*.ts",
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./ngus/core/dom-element.ts",
-        "./ngus/core/node.ts",
-        "./ngus/service/famous.ts",
-        "./ngus/webgl-renderables/mesh.ts",
-        "./app.ts",
+        "./src/core/dom-element.ts",
+        "./src/core/node.ts",
+        "./src/ngus.ts",
+        "./src/service/famous.ts",
+        "./src/webgl-renderables/mesh.ts",
         "./typings/angular2/angular2.d.ts",
         "./typings/es6-promise/es6-promise.d.ts",
         "./typings/famous/famous.d.ts",
