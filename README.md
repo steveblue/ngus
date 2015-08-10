@@ -70,7 +70,7 @@ In the project directory, use the `live-server` command.
 
 ###Develop ngus
 
-To watch for changes to typescript and compile on every save, run `tsc --watch` in the project directory. NOTE: You may get lots of errors when running this command since there are currently no type definitions for Famo.us Engine, see below. The watch should still work even with these errors.
+To watch for changes to typescript and compile on every save, run `gulp watch` or `tsc --watch` in the project directory. NOTE 1: You may get `error TS2307:` from the `gulp-typescript` task. Disregard for now, this seems to be a bug in gulp-typescript that doesn't effect compilation.
 
 * Commit changes to a branch, i.e. `feature/gl-textures` or `bug/broken-textures`.
 
@@ -83,9 +83,10 @@ To watch for changes to typescript and compile on every save, run `tsc --watch` 
 
 * Support for GL Features
 * Support for Famo.us Physics Engine
+* Support for Camera
 * Integration of Famo.us UI Events
-* Typescript type definitions for Famo.us Engine
+* Complete Typescript type definitions for Famo.us Engine and ngus
 * Better handling and customization of Famo.us Engine
-* Build and deployment pipeline via Gulp or Browserify
+* Refinement to the build tools
 * Integrated tests
 * Documentation

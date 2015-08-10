@@ -17,7 +17,33 @@ module.exports = {
          './src/*.ts']
   },
   ts: {
-    prod: {
+    es6: {
+        target: 'es6',
+        declaration: false,
+        noImplicitAny: false,
+        removeComments: true,
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true
+    },
+    common: {
+        target: 'es5',
+        module: 'commonjs',
+        declaration: false,
+        noImplicitAny: false,
+        removeComments: true,
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true
+    },
+    amd: {
+        target: 'es5',
+        module: 'amd',
+        declaration: false,
+        noImplicitAny: false,
+        removeComments: true,
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true
+    },
+    system: {
         target: 'es5',
         module: 'system',
         declaration: false,
@@ -25,7 +51,8 @@ module.exports = {
         removeComments: true,
         emitDecoratorMetadata: true,
         experimentalDecorators: true
-    }
+    },
+
   }
 
 };
