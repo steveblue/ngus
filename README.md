@@ -2,7 +2,7 @@
 
 #### Famo.us Mixed Mode in Angular 2
 
-v0.0.1
+v0.0.2
 
 ![alt text](screenshots/ngus.gif "Famo.us DOMElement and Mesh in a Mixed Mode Scene")
 
