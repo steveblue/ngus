@@ -17,6 +17,7 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./app.ts",
         "./src/components/camera.ts",
         "./src/core/dom-element.ts",
         "./src/core/node.ts",
