@@ -4,7 +4,7 @@
 
 v0.0.2
 
-![alt text](screenshots/ngus.gif "Famo.us DOMElement and Mesh in a Mixed Mode Scene")
+![alt text](http://ngus.io/screenshots/ngus.gif "Famo.us DOMElement and Mesh in a Mixed Mode Scene")
 
 ngus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of templates. This library allows engineers to bind Angular 2 properties to Famo.us Objects for fast, efficient templating.
 
@@ -33,11 +33,21 @@ ngus gives Angular 2 developers access to Famo.us DOMElement and Mesh inside of 
 
 * NOTE: ngus and Angular 2 are very early in development and not ready for deployment to a Production environment.
 
-##Demo
+###Demo
 
 A demo of ngus is running at [ngus.io](http://ngus.io).
 
-##Mission
+###Seed Project
+
+Get started developing with ngus quickly with this seed project.  ngus-seed tracks the latest version of ngus.
+
+[https://github.com/steveblue/ngus-seed](https://github.com/steveblue/ngus-seed).
+
+### Install
+
+`npm install ngus --save` in your Angular 2 project to download the latest release that comes packaged
+
+###Mission
 
 The goal is to provide a library that can be imported into Angular 2 projects so developers can leverage the Famo.us Scene Graph, Physics Engine and Mixed Mode Rendering Engine. The idea is to make a library of Angular Components that gives engineers the option to either tightly or loosely couple Angular 2 and Famo.us Engine with Angular Components.  
 
@@ -75,14 +85,13 @@ To watch for changes to typescript and compile on every save, run `gulp watch` o
 * Make a pull request.
 
 
-##What ngus Needs
+###What ngus Needs
 
 * Support for GL Features
 * Support for Famo.us Physics Engine
 * Support for Camera
 * Integration of Famo.us UI Events
-* Complete Typescript type definitions for Famo.us Engine and ngus
+* Complete Typescript type definitions for Famo.us Engine
 * Better handling and customization of Famo.us Engine
-* Refinement to the build tools
 * Integrated tests
 * Documentation
