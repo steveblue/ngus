@@ -63,10 +63,6 @@ Eventually, a more sophisticated build operation and development environment wil
 
 In the project directory, run `npm install`.
 
-###View the demo app
-
-In the project directory, use the `live-server` command.
-
 
 ###Develop ngus
 
