@@ -9,7 +9,7 @@
         "noLib": false,
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "outDir": "./dist"
+        "outDir": "./dist/system"
     },
     "filesGlob": [
         "./**/*.ts",
@@ -17,6 +17,7 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./src/components/camera.ts",
         "./src/core/dom-element.ts",
         "./src/core/node.ts",
         "./src/ngus.ts",
