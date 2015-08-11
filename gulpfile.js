@@ -83,8 +83,19 @@ gulp.task('build:prod', function () {
     ];
 });
 
+gulp.task('build:dev', function () {
+
+    var system = gulp.src(config.lib.src)
+        .pipe(tsc(systemProject));
+
+    return system.js
+            .pipe(plumber())
+            .pipe(gulp.dest(config.buildDir+'/system/'));
+});
+
+
 gulp.task('dev', function(){
-    gulp.watch(config.lib.src, ['build:prod']);
+    gulp.watch(config.lib.src, ['build:dev']);
 })
 
 //TODO: Someone please compile TS to ES6 then compile down to module patters
