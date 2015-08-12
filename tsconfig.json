@@ -19,6 +19,7 @@
     "files": [
         "./app.ts",
         "./src/components/camera.ts",
+        "./src/components/gesture-handler.ts",
         "./src/core/dom-element.ts",
         "./src/core/node.ts",
         "./src/ngus.ts",
