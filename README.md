@@ -68,7 +68,7 @@ Get started developing with ngus quickly with this seed project.  ngus-seed trac
 
 
 ```
-npm install ngus
+npm install ngus --save
 
 ```
 
