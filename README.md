@@ -63,55 +63,26 @@ Get started developing with ngus quickly with this seed project.  ngus-seed trac
 
 [https://github.com/steveblue/ngus-seed](https://github.com/steveblue/ngus-seed).
 
-### Install
 
-`npm install ngus --save` in your Angular 2 project to download the latest release that comes packaged
+###Install
 
-###Mission
-
-The goal is to provide a library that can be imported into Angular 2 projects so developers can leverage the Famo.us Scene Graph, Physics Engine and Mixed Mode Rendering Engine. The idea is to make a library of Angular Components that gives engineers the option to either tightly or loosely couple Angular 2 and Famo.us Engine with Angular Components.  
-
-###ngus Needs Your Help!
-
-ngus needs the help of the Famo.us and Angular 2 Developer Communities to really take off and be an invaluable next-gen tool for Web Developers.
-
-ngus still has a long way to go before it is ready for a Production environment. If you are interested in contributing to the project and helping to build out Angular 2 Components that interface with the Famo.us Engine contact <admin@ngus.io>.
-
-
-###Getting Started
-
-Fork the repo and then clone it.
-
-Angular 2 Components can either be written in ES5, ES6 or Typescript syntax. It seems like the Angular 2 Community has put full support behind Typescript since ng-conf so I have chosen to use it in development of ngus. Currently, LiveServer is used for a development server.
 
 ```
-npm install -g typescript
+npm install ngus
 
 ```
 
-Eventually, a more sophisticated build operation and development environment will most likely replace the requirement for LiveServer.
-
-In the project directory, run `npm install`.
+ngus is written in Typescript, however you can choose to write your Angular 2 apps in ES5 or ES6. npm install ngus will install the latest version of the ngus library. ngus is transpiled into amd, commonjs, systemjs, and ES6 modules. You can find these variants nside the /dist folder. If you prefer Typescript, a definition file for ngus is provided in the ngus-seed repo.
 
 
-###Develop ngus
 
-To watch for changes to typescript and compile on every save, run `gulp watch` or `tsc --watch` in the project directory. NOTE 1: You may get `error TS2307:` from the `gulp-typescript` task. Disregard for now, this seems to be a bug in gulp-typescript that doesn't effect compilation.
+###Roadmap
 
-* Commit changes to a branch, i.e. `feature/gl-textures` or `bug/broken-textures`.
-
-* Push changes to remote fork.
-
-* Make a pull request.
-
-
-###What ngus Needs
-
-* Support for GL Features
-* Support for Famo.us Physics Engine
+* Support for Gesture Handler
 * Support for Camera
-* Integration of Famo.us UI Events
-* Complete Typescript type definitions for Famo.us Engine
+* Support for Physics Engine
+* Support for WebGL Styling
 * Better handling and customization of Famo.us Engine
+* Complete Typescript type definitions for Famo.us Engine
 * Integrated tests
 * Documentation
