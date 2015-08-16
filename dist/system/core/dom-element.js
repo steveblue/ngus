@@ -56,23 +56,20 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                 FaDomElement.prototype.onInit = function () {
                     var elem = this;
                     this.content ? this.element.setContent(elem.content) : false;
-                };
-                FaDomElement.prototype.onChange = function (changes) {
-                    changes.id ? this.element.setId(changes.id.currentValue) : false;
-                    changes.classes ? this.setClasses(changes.classes.currentValue) : false;
-                    changes.attr ? this.setAttributes(changes.attr.currentValue) : false;
-                    changes.properties ? this.setProperties(changes.properties.currentValue) : false;
+                    this.id ? this.element.setId(this.id) : false;
+                    this.classes ? this.setClasses(this.classes) : false;
+                    this.attr ? this.setAttributes(this.attr) : false;
+                    this.properties ? this.setProperties(this.properties) : false;
                 };
                 FaDomElement = __decorate([
                     angular2_1.Component({
                         selector: 'fa-element',
-                        properties: ['properties', 'attr', 'content', 'id', 'classes'],
-                        lifecycle: [angular2_1.onInit, angular2_1.onChange]
+                        properties: ['properties', 'attr', 'content', 'id', 'classes']
                     }),
                     angular2_1.View({
                         template: ""
                     }),
-                    __param(0, angular2_1.Parent()), 
+                    __param(0, angular2_1.Host()), 
                     __metadata('design:paramtypes', [node_1.FaNode])
                 ], FaDomElement);
                 return FaDomElement;

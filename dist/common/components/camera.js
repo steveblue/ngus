@@ -20,20 +20,19 @@ var FaCamera = (function () {
         this.camera = new Camera(parent.node);
     }
     FaCamera.prototype.onInit = function () {
+        this.depth ? this.camera.setDepth(this.depth) : false;
     };
     FaCamera.prototype.onChange = function (changes) {
-        changes.depth ? this.camera.setDepth(changes.depth.currentValue) : false;
     };
     FaCamera = __decorate([
         angular2_1.Component({
             selector: 'fa-camera',
-            properties: ['depth'],
-            lifecycle: [angular2_1.onInit, angular2_1.onChange]
+            properties: ['depth']
         }),
         angular2_1.View({
             template: ""
         }),
-        __param(0, angular2_1.Parent()), 
+        __param(0, angular2_1.Host()), 
         __metadata('design:paramtypes', [node_1.FaNode])
     ], FaCamera);
     return FaCamera;

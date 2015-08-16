@@ -49,20 +49,18 @@ var FaNode = (function () {
         this.node.setOpacity(o);
     };
     FaNode.prototype.onInit = function () {
+        this.sizemode ? this.setSizeMode(this.sizemode) : false;
+        this.absolutesize ? this.setAbsoluteSize(this.absolutesize) : false;
+        this.proportionalsize ? this.setProportionalSize(this.proportionalsize) : false;
+        this.differentialsize ? this.setDifferentialSize(this.differentialsize) : false;
+        this.scale ? this.setScale(this.scale) : false;
+        this.mountpoint ? this.setMountPoint(this.mountpoint) : false;
+        this.origin ? this.setOrigin(this.origin) : false;
+        this.align ? this.setAlign(this.align) : false;
+        this.position ? this.setPosition(this.position) : false;
+        this.rotate ? this.setRotation(this.rotate) : false;
+        this.opacity ? this.setOpacity(this.opacity) : false;
         this.component ? this._component = this.node.addComponent(this.component) : false;
-    };
-    FaNode.prototype.onChange = function (change) {
-        change.sizemode ? this.setSizeMode(change.sizemode.currentValue) : false;
-        change.absolutesize ? this.setAbsoluteSize(change.absolutesize.currentValue) : false;
-        change.proportionalsize ? this.setProportionalSize(change.proportionalsize.currentValue) : false;
-        change.differentialsize ? this.setDifferentialSize(change.differentialsize.currentValue) : false;
-        change.scale ? this.setScale(change.scale.currentValue) : false;
-        change.mountpoint ? this.setMountPoint(change.mountpoint.currentValue) : false;
-        change.origin ? this.setOrigin(change.origin.currentValue) : false;
-        change.align ? this.setAlign(change.align.currentValue) : false;
-        change.position ? this.setPosition(change.position.currentValue) : false;
-        change.rotate ? this.setRotation(change.rotate.currentValue) : false;
-        change.opacity ? this.setOpacity(change.opacity.currentValue) : false;
     };
     FaNode = __decorate([
         angular2_1.Component({
@@ -78,8 +76,7 @@ var FaNode = (function () {
                 'absolutesize',
                 'proportionalsize',
                 'differentialsize',
-                'opacity'],
-            lifecycle: [angular2_1.onInit, angular2_1.onChange]
+                'opacity']
         }),
         angular2_1.View({
             template: ""

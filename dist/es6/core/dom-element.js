@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Component, View, Parent, onInit, onChange } from 'angular2/angular2';
+import { Component, View, Host } from 'angular2/angular2';
 import { FaNode } from '../core/node';
 export let FaDomElement = class {
     constructor(parent) {
@@ -47,23 +47,20 @@ export let FaDomElement = class {
     onInit() {
         let elem = this;
         this.content ? this.element.setContent(elem.content) : false;
-    }
-    onChange(changes) {
-        changes.id ? this.element.setId(changes.id.currentValue) : false;
-        changes.classes ? this.setClasses(changes.classes.currentValue) : false;
-        changes.attr ? this.setAttributes(changes.attr.currentValue) : false;
-        changes.properties ? this.setProperties(changes.properties.currentValue) : false;
+        this.id ? this.element.setId(this.id) : false;
+        this.classes ? this.setClasses(this.classes) : false;
+        this.attr ? this.setAttributes(this.attr) : false;
+        this.properties ? this.setProperties(this.properties) : false;
     }
 };
 FaDomElement = __decorate([
     Component({
         selector: 'fa-element',
-        properties: ['properties', 'attr', 'content', 'id', 'classes'],
-        lifecycle: [onInit, onChange]
+        properties: ['properties', 'attr', 'content', 'id', 'classes']
     }),
     View({
         template: ``
     }),
-    __param(0, Parent()), 
+    __param(0, Host()), 
     __metadata('design:paramtypes', [FaNode])
 ], FaDomElement);

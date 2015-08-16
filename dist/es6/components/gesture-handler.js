@@ -14,30 +14,31 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 import { Component, View, Host } from 'angular2/angular2';
 import { FaNode } from '../core/node';
-export let FaMesh = class {
+export let FaGestureHandler = class {
     constructor(parent) {
-        var Mesh = famous.webglRenderables.Mesh;
-        this.mesh = new Mesh(parent.node);
+        let GestureHandler = famous.components.GestureHandler;
+        this.node = parent.node;
+        this.gestures = new GestureHandler(this.node);
     }
     onInit() {
-        var Color = famous.utilities.Color;
-        if (this.detail && this.geometry) {
-            this.mesh.setGeometry(this.geometry, { detail: this.detail });
-        }
-        else if (this.geometry) {
-            this.mesh.setGeometry(this.geometry);
-        }
-        this.color ? this.mesh.setBaseColor(new Color(this.color)) : this.mesh.setBaseColor(new Color('#FAFAFA'));
+        var g = this;
+        this.drag ? this.gestures.on({ event: 'drag' }, g.drag.currentValue.bind(this.node)) : false;
+        this.tap ? this.gestures.on({ event: 'tap' }, g.tap.currentValue.bind(this.node)) : false;
+        this.rotate ? this.gestures.on({ event: 'rotate' }, g.rotate.currentValue.bind(this.node)) : false;
+        this.pinch ? this.gestures.on({ event: 'drag' }, g.pinch.currentValue.bind(this.node)) : false;
+    }
+    onChange(changes) {
+        // add some gestures
     }
 };
-FaMesh = __decorate([
+FaGestureHandler = __decorate([
     Component({
-        selector: 'fa-mesh',
-        properties: ['geometry', 'color', 'detail']
+        selector: 'fa-gesture-handler',
+        properties: ['drag', 'tap', 'rotate', 'pinch']
     }),
     View({
         template: ``
     }),
     __param(0, Host()), 
     __metadata('design:paramtypes', [FaNode])
-], FaMesh);
+], FaGestureHandler);

@@ -30,23 +30,24 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
                     this.gestures = new GestureHandler(this.node);
                 }
                 FaGestureHandler.prototype.onInit = function () {
+                    var g = this;
+                    this.drag ? this.gestures.on({ event: 'drag' }, g.drag.currentValue.bind(this.node)) : false;
+                    this.tap ? this.gestures.on({ event: 'tap' }, g.tap.currentValue.bind(this.node)) : false;
+                    this.rotate ? this.gestures.on({ event: 'rotate' }, g.rotate.currentValue.bind(this.node)) : false;
+                    this.pinch ? this.gestures.on({ event: 'drag' }, g.pinch.currentValue.bind(this.node)) : false;
                 };
                 FaGestureHandler.prototype.onChange = function (changes) {
-                    changes.drag ? this.gestures.on({ event: 'drag' }, changes.drag.currentValue.bind(this.node)) : false;
-                    changes.tap ? this.gestures.on({ event: 'tap' }, changes.tap.currentValue.bind(this.node)) : false;
-                    changes.rotate ? this.gestures.on({ event: 'rotate' }, changes.rotate.currentValue.bind(this.node)) : false;
-                    changes.pinch ? this.gestures.on({ event: 'drag' }, changes.pinch.currentValue.bind(this.node)) : false;
+                    // add some gestures
                 };
                 FaGestureHandler = __decorate([
                     angular2_1.Component({
                         selector: 'fa-gesture-handler',
-                        properties: ['drag', 'tap', 'rotate', 'pinch'],
-                        lifecycle: [angular2_1.onInit, angular2_1.onChange]
+                        properties: ['drag', 'tap', 'rotate', 'pinch']
                     }),
                     angular2_1.View({
                         template: ""
                     }),
-                    __param(0, angular2_1.Parent()), 
+                    __param(0, angular2_1.Host()), 
                     __metadata('design:paramtypes', [node_1.FaNode])
                 ], FaGestureHandler);
                 return FaGestureHandler;

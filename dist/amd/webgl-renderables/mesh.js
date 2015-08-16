@@ -31,13 +31,12 @@ define(["require", "exports", 'angular2/angular2', '../core/node'], function (re
         FaMesh = __decorate([
             angular2_1.Component({
                 selector: 'fa-mesh',
-                properties: ['geometry', 'color', 'detail'],
-                lifecycle: [angular2_1.onInit]
+                properties: ['geometry', 'color', 'detail']
             }),
             angular2_1.View({
                 template: ""
             }),
-            __param(0, angular2_1.Parent()), 
+            __param(0, angular2_1.Host()), 
             __metadata('design:paramtypes', [node_1.FaNode])
         ], FaMesh);
         return FaMesh;

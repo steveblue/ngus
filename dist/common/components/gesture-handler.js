@@ -14,32 +14,33 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 };
 var angular2_1 = require('angular2/angular2');
 var node_1 = require('../core/node');
-var FaMesh = (function () {
-    function FaMesh(parent) {
-        var Mesh = famous.webglRenderables.Mesh;
-        this.mesh = new Mesh(parent.node);
+var FaGestureHandler = (function () {
+    function FaGestureHandler(parent) {
+        var GestureHandler = famous.components.GestureHandler;
+        this.node = parent.node;
+        this.gestures = new GestureHandler(this.node);
     }
-    FaMesh.prototype.onInit = function () {
-        var Color = famous.utilities.Color;
-        if (this.detail && this.geometry) {
-            this.mesh.setGeometry(this.geometry, { detail: this.detail });
-        }
-        else if (this.geometry) {
-            this.mesh.setGeometry(this.geometry);
-        }
-        this.color ? this.mesh.setBaseColor(new Color(this.color)) : this.mesh.setBaseColor(new Color('#FAFAFA'));
+    FaGestureHandler.prototype.onInit = function () {
+        var g = this;
+        this.drag ? this.gestures.on({ event: 'drag' }, g.drag.currentValue.bind(this.node)) : false;
+        this.tap ? this.gestures.on({ event: 'tap' }, g.tap.currentValue.bind(this.node)) : false;
+        this.rotate ? this.gestures.on({ event: 'rotate' }, g.rotate.currentValue.bind(this.node)) : false;
+        this.pinch ? this.gestures.on({ event: 'drag' }, g.pinch.currentValue.bind(this.node)) : false;
     };
-    FaMesh = __decorate([
+    FaGestureHandler.prototype.onChange = function (changes) {
+        // add some gestures
+    };
+    FaGestureHandler = __decorate([
         angular2_1.Component({
-            selector: 'fa-mesh',
-            properties: ['geometry', 'color', 'detail']
+            selector: 'fa-gesture-handler',
+            properties: ['drag', 'tap', 'rotate', 'pinch']
         }),
         angular2_1.View({
             template: ""
         }),
         __param(0, angular2_1.Host()), 
         __metadata('design:paramtypes', [node_1.FaNode])
-    ], FaMesh);
-    return FaMesh;
+    ], FaGestureHandler);
+    return FaGestureHandler;
 })();
-exports.FaMesh = FaMesh;
+exports.FaGestureHandler = FaGestureHandler;

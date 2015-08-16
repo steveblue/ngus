@@ -97,6 +97,10 @@ gulp.task('build:dev', function () {
 gulp.task('dev', function(){
     gulp.watch(config.lib.src, ['build:dev']);
 })
+//
+// gulp.task('dev:build', function(){
+//     gulp.watch(config.lib.src, ['build:dev']);
+// })
 
 //TODO: Someone please compile TS to ES6 then compile down to module patters
 // with traceur so packages can be minified.

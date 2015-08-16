@@ -12,7 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-import { Component, View, Parent, onInit, onChange } from 'angular2/angular2';
+import { Component, View, Host } from 'angular2/angular2';
 import { FaNode } from '../core/node';
 export let FaCamera = class {
     constructor(parent) {
@@ -20,20 +20,19 @@ export let FaCamera = class {
         this.camera = new Camera(parent.node);
     }
     onInit() {
+        this.depth ? this.camera.setDepth(this.depth) : false;
     }
     onChange(changes) {
-        changes.depth ? this.camera.setDepth(changes.depth.currentValue) : false;
     }
 };
 FaCamera = __decorate([
     Component({
         selector: 'fa-camera',
-        properties: ['depth'],
-        lifecycle: [onInit, onChange]
+        properties: ['depth']
     }),
     View({
         template: ``
     }),
-    __param(0, Parent()), 
+    __param(0, Host()), 
     __metadata('design:paramtypes', [FaNode])
 ], FaCamera);

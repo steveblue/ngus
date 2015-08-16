@@ -13,28 +13,34 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 define(["require", "exports", 'angular2/angular2', '../core/node'], function (require, exports, angular2_1, node_1) {
-    var FaCamera = (function () {
-        function FaCamera(parent) {
-            var Camera = famous.components.Camera;
-            this.camera = new Camera(parent.node);
+    var FaGestureHandler = (function () {
+        function FaGestureHandler(parent) {
+            var GestureHandler = famous.components.GestureHandler;
+            this.node = parent.node;
+            this.gestures = new GestureHandler(this.node);
         }
-        FaCamera.prototype.onInit = function () {
-            this.depth ? this.camera.setDepth(this.depth) : false;
+        FaGestureHandler.prototype.onInit = function () {
+            var g = this;
+            this.drag ? this.gestures.on({ event: 'drag' }, g.drag.currentValue.bind(this.node)) : false;
+            this.tap ? this.gestures.on({ event: 'tap' }, g.tap.currentValue.bind(this.node)) : false;
+            this.rotate ? this.gestures.on({ event: 'rotate' }, g.rotate.currentValue.bind(this.node)) : false;
+            this.pinch ? this.gestures.on({ event: 'drag' }, g.pinch.currentValue.bind(this.node)) : false;
         };
-        FaCamera.prototype.onChange = function (changes) {
+        FaGestureHandler.prototype.onChange = function (changes) {
+            // add some gestures
         };
-        FaCamera = __decorate([
+        FaGestureHandler = __decorate([
             angular2_1.Component({
-                selector: 'fa-camera',
-                properties: ['depth']
+                selector: 'fa-gesture-handler',
+                properties: ['drag', 'tap', 'rotate', 'pinch']
             }),
             angular2_1.View({
                 template: ""
             }),
             __param(0, angular2_1.Host()), 
             __metadata('design:paramtypes', [node_1.FaNode])
-        ], FaCamera);
-        return FaCamera;
+        ], FaGestureHandler);
+        return FaGestureHandler;
     })();
-    exports.FaCamera = FaCamera;
+    exports.FaGestureHandler = FaGestureHandler;
 });
