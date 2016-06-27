@@ -2,6 +2,10 @@
 
 #### Famo.us Mixed Mode in Angular 2
 
+#This project is deprecated since Famo.us is no longer supported. 
+
+The examples here of integrating Famo.us and Angular 2 are outdated, but could serve as inspiration for anymore trying to integrate an existing library with Angular 2 templates.
+
 v0.0.2
 
 ![alt text](http://ngus.io/screenshots/ngus.gif "Famo.us DOMElement and Mesh in a Mixed Mode Scene")
